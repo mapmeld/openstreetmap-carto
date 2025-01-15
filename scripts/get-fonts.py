@@ -68,6 +68,7 @@ REGULAR = [
     "NotoSansBuhid",
     "NotoSansChakma",
     "NotoSansCoptic",
+    "NotoSansGlagolitic",
     "NotoSansHanunoo",
     "NotoSansLepcha",
     "NotoSansLimbu",

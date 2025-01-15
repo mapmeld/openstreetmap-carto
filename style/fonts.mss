@@ -74,6 +74,7 @@ A regular style.
                 "Noto Sans Devanagari UI Regular",
                 "Noto Sans Ethiopic Regular",
                 "Noto Sans Georgian Regular",
+                "Noto Sans Glagolitic Regular",
                 "Noto Sans Gujarati UI Regular",
                 "Noto Sans Gurmukhi UI Regular",
                 "Noto Sans Hanunoo Regular",
