@@ -57,8 +57,9 @@ Map {
 A regular style.
 */
 @book-fonts:    "Noto Sans Regular",
+                /* {regular fonts} */
                 "Noto Sans Adlam Unjoined Regular",
-                "Noto Sans Arabic UI Regular",
+                "Noto Sans Arabic Regular",
                 "Noto Sans Armenian Regular",
                 "Noto Sans Balinese Regular",
                 "Noto Sans Bamum Regular",
@@ -90,8 +91,8 @@ A regular style.
                 "Noto Sans Mandaic Regular",
                 "Noto Sans Mongolian Regular",
                 "Noto Sans Myanmar UI Regular",
-                "Noto Sans New Tai Lue Regular",
                 "Noto Sans NKo Regular",
+                "Noto Sans New Tai Lue Regular",
                 "Noto Sans Ol Chiki Regular",
                 "Noto Sans Oriya UI Regular",
                 "Noto Sans Osage Regular",
@@ -116,9 +117,9 @@ A regular style.
                 "Noto Sans Tifinagh Regular",
                 "Noto Sans Vai Regular",
                 "Noto Sans Yi Regular",
-                "Noto Sans CJK JP Regular",
-                
                 "Noto Serif Tibetan Regular",
+                /* {/regular fonts} */
+                "Noto Sans CJK JP Regular",
                 "Noto Emoji Regular",
 
                 "HanaMinA Regular", "HanaMinB Regular";
@@ -128,8 +129,9 @@ A bold style is available for almost all scripts. Bold text is heavier than
 regular text and can be used for emphasis. Fallback is a regular style.
 */
 @bold-fonts:    "Noto Sans Bold",
+                /* {bold fonts} */
                 "Noto Sans Adlam Unjoined Bold",
-                "Noto Sans Arabic UI Bold",
+                "Noto Sans Arabic Bold",
                 "Noto Sans Armenian Bold",
                 "Noto Sans Balinese Bold",
                 "Noto Sans Bamum Bold",
@@ -162,9 +164,9 @@ regular text and can be used for emphasis. Fallback is a regular style.
                 "Noto Sans Telugu UI Bold",
                 "Noto Sans Thaana Bold",
                 "Noto Sans Thai UI Bold",
-                "Noto Sans CJK JP Bold",
-
                 "Noto Serif Tibetan Bold",
+                /* {/bold fonts} */
+                "Noto Sans CJK JP Bold",
                 "Noto Emoji Bold",
 
                 @book-fonts;

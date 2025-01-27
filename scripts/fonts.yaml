@@ -1,0 +1,265 @@
+fonts:
+  # download most variations of NotoSans (Latin alphabet)
+  NotoSans:
+    variations:
+      - bold
+      - italic
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSans/
+  # regular and bold of below fonts
+  # Arabic uses newer Noto URLs
+  NotoSansAdlamUnjoined:
+    variations:
+      - bold
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansAdlamUnjoined/
+  NotoSansArabic:
+    variations:
+      - bold
+    urls:
+      - https://cdn.jsdelivr.net/gh/notofonts/notofonts.github.io/fonts/NotoSansArabic/hinted/ttf/
+      - https://notofonts.github.io/arabic/fonts/NotoSansArabic/hinted/ttf/
+  NotoSansArmenian:
+    variations:
+      - bold
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansArmenian/
+  NotoSansBalinese:
+    variations:
+      - bold
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansBalinese/
+  NotoSansBamum:
+    variations:
+      - bold
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansBamum/
+  NotoSansBengaliUI:
+    variations:
+      - bold
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansBengaliUI/
+  NotoSansCanadianAboriginal:
+    variations:
+      - bold
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansCanadianAboriginal/
+  NotoSansCham:
+    variations:
+      - bold
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansCham/
+  NotoSansCherokee:
+    variations:
+      - bold
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansCherokee/
+  NotoSansDevanagariUI:
+    variations:
+      - bold
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansDevanagariUI/
+  NotoSansEthiopic:
+    variations:
+      - bold
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansEthiopic/
+  NotoSansGeorgian:
+    variations:
+      - bold
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansGeorgian/
+  NotoSansGujaratiUI:
+    variations:
+      - bold
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansGujaratiUI/
+  NotoSansGurmukhiUI:
+    variations:
+      - bold
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansGurmukhiUI/
+  NotoSansHebrew:
+    variations:
+      - bold
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansHebrew/
+  NotoSansJavanese:
+    variations:
+      - bold
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansJavanese/
+  NotoSansOlChiki:
+    variations:
+      - bold
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansOlChiki/
+  NotoSansOriyaUI:
+    variations:
+      - bold
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansOriyaUI/
+  NotoSansKannadaUI:
+    variations:
+      - bold
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansKannadaUI/
+  NotoSansKayahLi:
+    variations:
+      - bold
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansKayahLi/
+  NotoSansKhmerUI:
+    variations:
+      - bold
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansKhmerUI/
+  NotoSansLaoUI:
+    variations:
+      - bold
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansLaoUI/
+  NotoSansLisu:
+    variations:
+      - bold
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansLisu/
+  NotoSansMalayalamUI:
+    variations:
+      - bold
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansMalayalamUI/
+  NotoSansMyanmarUI:
+    variations:
+      - bold
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansMyanmarUI/
+  NotoSansSinhalaUI:
+    variations:
+      - bold
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansSinhalaUI/
+  NotoSansSundanese:
+    variations:
+      - bold
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansSundanese/
+  NotoSansSymbols:
+    variations:
+      - bold
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansSymbols/
+  NotoSansTaiTham:
+    variations:
+      - bold
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansTaiTham/
+  NotoSansTamilUI:
+    variations:
+      - bold
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansTamilUI/
+  NotoSansTeluguUI:
+    variations:
+      - bold
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansTeluguUI/
+  NotoSansThaana:
+    variations:
+      - bold
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansThaana/
+  NotoSansThaiUI:
+    variations:
+      - bold
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansThaiUI/
+  NotoSerifTibetan:
+    variations:
+      - bold
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSerifTibetan/
+
+  # Regular and Black fonts (used for Bold)
+  NotoSansSyriac:
+    variations:
+      - black
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansSyriac/
+
+  # Regular font only
+  NotoSansBatak:
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansBatak/
+  NotoSansBuginese:
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansBuginese/
+  NotoSansBuhid:
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansBuhid/
+  NotoSansChakma:
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansChakma/
+  NotoSansCoptic:
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansCoptic/
+  NotoSansHanunoo:
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansHanunoo/
+  NotoSansLepcha:
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansLepcha/
+  NotoSansLimbu:
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansLimbu/
+  NotoSansMandaic:
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansMandaic/
+  NotoSansMongolian:
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansMongolian/
+  NotoSansNewTaiLue:
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansNewTaiLue/
+  NotoSansNKo:
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansNKo/
+  NotoSansOsage:
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansOsage/
+  NotoSansOsmanya:
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansOsmanya/
+  NotoSansSamaritan:
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansSamaritan/
+  NotoSansSaurashtra:
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansSaurashtra/
+  NotoSansShavian:
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansShavian/
+  NotoSansSymbols2:
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansSymbols2/
+  NotoSansTagalog:
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansTagalog/
+  NotoSansTagbanwa:
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansTagbanwa/
+  NotoSansTaiLe:
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansTaiLe/
+  NotoSansTaiViet:
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansTaiViet/
+  NotoSansTifinagh:
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansTifinagh/
+  NotoSansVai:
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansVai/
+  NotoSansYi:
+    urls:
+      - https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/NotoSansYi/

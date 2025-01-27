@@ -4,10 +4,12 @@
 # Additional fonts can be found on https://notofonts.github.io
 
 import os
+import re
 import requests
 import tempfile
 import shutil
 import warnings
+import yaml
 import zipfile
 
 FONTDIR = os.environ.get("FONTDIR", "./fonts")
@@ -16,88 +18,6 @@ try:
     os.mkdir(FONTDIR)
 except FileExistsError:
     warnings.warn("Font directory already exists")
-
-# Fonts to download in regular, bold, and italic
-REGULAR_BOLD_ITALIC = ["NotoSans"]
-
-# Fonts to download in regular and bold
-REGULAR_BOLD = [
-    "NotoSansAdlamUnjoined",
-    "NotoSansArabicUI",
-    "NotoSansArmenian",
-    "NotoSansBalinese",
-    "NotoSansBamum",
-    "NotoSansBengaliUI",
-    "NotoSansCanadianAboriginal",
-    "NotoSansCham",
-    "NotoSansCherokee",
-    "NotoSansDevanagariUI",
-    "NotoSansEthiopic",
-    "NotoSansGeorgian",
-    "NotoSansGujaratiUI",
-    "NotoSansGurmukhiUI",
-    "NotoSansHebrew",
-    "NotoSansJavanese",
-    "NotoSansKannadaUI",
-    "NotoSansKayahLi",
-    "NotoSansKhmerUI",
-    "NotoSansLaoUI",
-    "NotoSansLisu",
-    "NotoSansMalayalamUI",
-    "NotoSansMyanmarUI",
-    "NotoSansOlChiki",
-    "NotoSansOriyaUI",
-    "NotoSansSinhalaUI",
-    "NotoSansSundanese",
-    "NotoSansSymbols",
-    "NotoSansTaiTham",
-    "NotoSansTamilUI",
-    "NotoSansTeluguUI",
-    "NotoSansThaana",
-    "NotoSansThaiUI",
-    "NotoSerifTibetan",
-]
-
-# Fonts to download regular and black, but no bold
-REGULAR_BLACK = ["NotoSansSyriac"]
-
-# Fonts to download only regular
-REGULAR = [
-    "NotoSansBatak",
-    "NotoSansBuginese",
-    "NotoSansBuhid",
-    "NotoSansChakma",
-    "NotoSansCoptic",
-    "NotoSansHanunoo",
-    "NotoSansLepcha",
-    "NotoSansLimbu",
-    "NotoSansMandaic",
-    "NotoSansMongolian",
-    "NotoSansNewTaiLue",
-    "NotoSansNKo",
-    "NotoSansOsage",
-    "NotoSansOsmanya",
-    "NotoSansSamaritan",
-    "NotoSansSaurashtra",
-    "NotoSansShavian",
-    "NotoSansSymbols2",
-    "NotoSansTagalog",
-    "NotoSansTagbanwa",
-    "NotoSansTaiLe",
-    "NotoSansTaiViet",
-    "NotoSansTifinagh",
-    "NotoSansVai",
-    "NotoSansYi",
-]
-
-
-# Attempt to download the font from repos in this order
-def findFontUrls(fontName, modifier):
-    return [
-        f"https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/{fontName}/{fontName}-{modifier}.ttf",
-        # currently only sourcing from one repo
-    ]
-
 
 def downloadToFile(urls, destination, dir=FONTDIR):
     headers = {"User-Agent": "get-fonts.py/osm-carto"}
@@ -115,22 +35,62 @@ def downloadToFile(urls, destination, dir=FONTDIR):
     except:
         raise Exception(f"Failed to download {urls}")
 
+# return a CartoCSS-friendly name for installed fonts
+# example: NotoSansCherokee -> Noto Sans Cherokee
+# support: Noto Sans NKo, Noto Sans Symbols2
+def cartoFont(script, variation):
+    return f"{re.sub(r'(?<=[a-z])(?=[A-Z])', ' ', script)} {variation.capitalize()}"
 
-for font in REGULAR_BOLD + REGULAR_BOLD_ITALIC + REGULAR_BLACK + REGULAR:
-    regularFontUrls = findFontUrls(font, "Regular")
-    downloadToFile(regularFontUrls, f"{font}-Regular.ttf")
+# prepare to save font names to MSS file
+regularFonts = []
+boldFonts = []
 
-    if (font in REGULAR_BOLD) or (font in REGULAR_BOLD_ITALIC):
-        boldFontUrls = findFontUrls(font, "Bold")
-        downloadToFile(boldFontUrls, f"{font}-Bold.ttf")
+# download scripts in alphabetical order
+fontInfo = yaml.safe_load(open('scripts/fonts.yaml', 'r'))
+scripts = sorted(list(fontInfo['fonts'].keys()))
+for script in scripts:
+    scriptInfo = fontInfo['fonts'][script]
+    variations = ['regular'] + (scriptInfo.get('variations', []))
+    regularFonts.append(cartoFont(script, 'Regular'))
+    for variation in variations:
+        filename = f"{script}-{variation.capitalize()}.ttf"
+        fontUrls = list(map(lambda url: url + filename, scriptInfo['urls']))
+        downloadToFile(fontUrls, filename)
+        if variation in ['bold', 'black']:
+            boldFonts.append(cartoFont(script, variation.capitalize()))
 
-    if font in REGULAR_BOLD_ITALIC:
-        italicFontUrls = findFontUrls(font, "Italic")
-        downloadToFile(italicFontUrls, f"{font}-Italic.ttf")
+# reformat fonts.mss
+reformattedMSS = ""
+with open('./style/fonts.mss', 'r') as fontCartoFile:
+    fontCartoContent = fontCartoFile.read()
 
-    if font in REGULAR_BLACK:
-        blackFontUrls = findFontUrls(font, "Black")
-        downloadToFile(blackFontUrls, f"{font}-Black.ttf")
+    # write in regular fonts
+    try:
+        regularStart = fontCartoContent.index('/* {regular fonts} */')
+        regularEnd = fontCartoContent.index('/* {/regular fonts} */')
+    except:
+        raise Exception("File fonts.mss did not include {regular fonts} {/regular fonts} tags")
+    reformattedMSS = fontCartoContent[:regularStart + 21] + "\n"
+    for font in regularFonts:
+        if font not in ['Noto Sans Regular']:
+            reformattedMSS += f"                \"{font}\",\n"
+    reformattedMSS += f"                {fontCartoContent[regularEnd:]}"
+
+    # write in bold/black fonts
+    fontCartoContent = reformattedMSS
+    try:
+        boldStart = fontCartoContent.index('/* {bold fonts} */')
+        boldEnd = fontCartoContent.index('/* {/bold fonts} */')
+    except:
+        raise Exception("File fonts.mss did not include {bold fonts} {/bold fonts} tags")
+    reformattedMSS = fontCartoContent[:boldStart + 18] + "\n"
+    for font in boldFonts:
+        if font not in ['Noto Sans Bold']:
+            reformattedMSS += f"                \"{font}\",\n"
+    reformattedMSS += f"                {fontCartoContent[boldEnd:]}"
+
+with open('./style/fonts.mss', 'w') as outputMSS:
+    outputMSS.write(reformattedMSS)
 
 # Other noto fonts which don't follow the URL pattern above
 
