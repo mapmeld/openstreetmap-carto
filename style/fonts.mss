@@ -53,11 +53,9 @@ Map {
   font-directory: url('fonts');
 }
 
-/*
-A regular style.
-*/
+/* regular_fonts */
+
 @book-fonts:    "Noto Sans Regular",
-                /* {regular fonts} */
                 "Noto Sans Adlam Unjoined Regular",
                 "Noto Sans Arabic Regular",
                 "Noto Sans Armenian Regular",
@@ -118,18 +116,19 @@ A regular style.
                 "Noto Sans Vai Regular",
                 "Noto Sans Yi Regular",
                 "Noto Serif Tibetan Regular",
-                /* {/regular fonts} */
                 "Noto Sans CJK JP Regular",
-                "Noto Emoji Regular",
-
-                "HanaMinA Regular", "HanaMinB Regular";
+    "Noto Emoji Regular",
+    "HanaMinA Regular", "HanaMinB Regular";
+/* /regular_fonts */
 
 /*
 A bold style is available for almost all scripts. Bold text is heavier than
 regular text and can be used for emphasis. Fallback is a regular style.
 */
+/* bold_fonts */
+
+
 @bold-fonts:    "Noto Sans Bold",
-                /* {bold fonts} */
                 "Noto Sans Adlam Unjoined Bold",
                 "Noto Sans Arabic Bold",
                 "Noto Sans Armenian Bold",
@@ -165,11 +164,10 @@ regular text and can be used for emphasis. Fallback is a regular style.
                 "Noto Sans Thaana Bold",
                 "Noto Sans Thai UI Bold",
                 "Noto Serif Tibetan Bold",
-                /* {/bold fonts} */
                 "Noto Sans CJK JP Bold",
                 "Noto Emoji Bold",
-
                 @book-fonts;
+/* /bold_fonts */
 
 /*
 Italics are only available for the (Latin-Greek-Cyrillic) base font, not the other scripts.

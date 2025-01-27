@@ -66,28 +66,42 @@ with open('./style/fonts.mss', 'r') as fontCartoFile:
 
     # write in regular fonts
     try:
-        regularStart = fontCartoContent.index('/* {regular fonts} */')
-        regularEnd = fontCartoContent.index('/* {/regular fonts} */')
+        regularStart = fontCartoContent.index('/* regular_fonts */')
+        regularEnd = fontCartoContent.index('/* /regular_fonts */')
     except:
-        raise Exception("File fonts.mss did not include {regular fonts} {/regular fonts} tags")
-    reformattedMSS = fontCartoContent[:regularStart + 21] + "\n"
+        raise Exception("File fonts.mss did not include regular_fonts, /regular_fonts tags")
+    reformattedMSS = fontCartoContent[:regularStart + 20]
+    reformattedMSS += """
+@book-fonts:    "Noto Sans Regular",
+"""
     for font in regularFonts:
         if font not in ['Noto Sans Regular']:
             reformattedMSS += f"                \"{font}\",\n"
-    reformattedMSS += f"                {fontCartoContent[regularEnd:]}"
+    reformattedMSS += """                "Noto Sans CJK JP Regular",
+    "Noto Emoji Regular",
+    "HanaMinA Regular", "HanaMinB Regular";
+"""
+    reformattedMSS += fontCartoContent[regularEnd:]
 
     # write in bold/black fonts
     fontCartoContent = reformattedMSS
     try:
-        boldStart = fontCartoContent.index('/* {bold fonts} */')
-        boldEnd = fontCartoContent.index('/* {/bold fonts} */')
+        boldStart = fontCartoContent.index('/* bold_fonts */')
+        boldEnd = fontCartoContent.index('/* /bold_fonts */')
     except:
-        raise Exception("File fonts.mss did not include {bold fonts} {/bold fonts} tags")
-    reformattedMSS = fontCartoContent[:boldStart + 18] + "\n"
+        raise Exception("File fonts.mss did not include bold_fonts, /bold_fonts tags")
+    reformattedMSS = fontCartoContent[:boldStart + 17] + "\n"
+    reformattedMSS += """
+@bold-fonts:    "Noto Sans Bold",
+"""
     for font in boldFonts:
         if font not in ['Noto Sans Bold']:
             reformattedMSS += f"                \"{font}\",\n"
-    reformattedMSS += f"                {fontCartoContent[boldEnd:]}"
+    reformattedMSS += """                "Noto Sans CJK JP Bold",
+                "Noto Emoji Bold",
+                @book-fonts;
+"""
+    reformattedMSS += fontCartoContent[boldEnd:]
 
 with open('./style/fonts.mss', 'w') as outputMSS:
     outputMSS.write(reformattedMSS)
