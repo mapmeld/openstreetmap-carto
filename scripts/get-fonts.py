@@ -133,8 +133,11 @@ for font in REGULAR_BOLD + REGULAR_BOLD_ITALIC + REGULAR_BLACK + REGULAR:
         downloadToFile(blackFontUrls, f"{font}-Black.ttf")
 
 # Other noto fonts which don't follow the URL pattern above
+# Fonts in zipfiles need a temporary directory
+TMPDIR = tempfile.mkdtemp(prefix="get-fonts.")
 
 # CJK fonts
+# Classic Japanese font to support CJK characters
 downloadToFile(
     [
         "https://github.com/notofonts/noto-cjk/raw/main/Sans/OTF/Japanese/NotoSansCJKjp-Regular.otf"
@@ -148,8 +151,20 @@ downloadToFile(
     "NotoSansCJKjp-Bold.otf",
 )
 
-# Fonts in zipfiles need a temporary directory
-TMPDIR = tempfile.mkdtemp(prefix="get-fonts.")
+# Simplified Chinese font (for specific regions)
+downloadToFile(
+    [
+        "https://github.com/notofonts/noto-cjk/releases/download/Sans2.004/08_NotoSansCJKsc.zip"
+    ],
+    "Sans2.004_NotoSansCJKsc.zip",
+    dir=TMPDIR,
+)
+cjkPath = os.path.join(TMPDIR, "Sans2.004_NotoSansCJKsc.zip")
+cjkExtract = ["NotoSansCJKsc-Regular.otf", "NotoSansCJKsc-Bold.otf"]
+with zipfile.ZipFile(cjkPath, "r") as zip_ref:
+    for file in cjkExtract:
+        source = zip_ref.getinfo(file)
+        zip_ref.extract(source, FONTDIR)
 
 # Noto Emoji B&W isn't available as a separate download, so we need to download the package and unzip it
 downloadToFile(
