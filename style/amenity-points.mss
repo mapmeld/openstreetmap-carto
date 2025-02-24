@@ -1634,6 +1634,10 @@
     text-face-name: @oblique-fonts;
     text-halo-radius: @standard-halo-radius;
     text-halo-fill: @standard-halo-fill;
+    [cjk = 'sc'] {
+      text-face-name: @simplified-chinese-oblique-fonts;
+      text-fill: @simplified-chinese-color-debug;
+    }
   }
 
   [feature = 'place_locality'][zoom >= 16] {
@@ -1654,6 +1658,10 @@
       text-fill: @placenames-light;
       text-halo-fill: white;
     }
+    [cjk = 'sc'] {
+      text-face-name: @simplified-chinese-fonts;
+      text-fill: @simplified-chinese-color-debug;
+    }
   }
 
   [feature = 'place_square'][zoom >= 17] {
@@ -1665,6 +1673,10 @@
     text-wrap-width: 45; // 4.5 em
     text-line-spacing: -0.8; // -0.08 em
     text-margin: 7.0; // 0.7 em
+    [cjk = 'sc'] {
+      text-face-name: @simplified-chinese-fonts;
+      text-fill: @simplified-chinese-color-debug;
+    }
   }
 
   [feature = 'amenity_pub'][zoom >= 18],
@@ -1686,6 +1698,10 @@
     text-halo-fill: @standard-halo-fill;
     [feature = 'amenity_bar'] {
       text-dy: 13;
+    }
+    [cjk = 'sc'] {
+      text-face-name: @simplified-chinese-fonts;
+      text-fill: @simplified-chinese-color-debug;
     }
   }
 
@@ -1711,6 +1727,10 @@
       [feature = 'amenity_nightclub']{
         text-dy: 12;
       }
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-fonts;
+        text-fill: @simplified-chinese-color-debug;
+      }
     }
   }
 
@@ -1724,6 +1744,10 @@
     text-face-name: @standard-font;
     text-halo-radius: @standard-halo-radius;
     text-halo-fill: @standard-halo-fill;
+    [cjk = 'sc'] {
+      text-face-name: @simplified-chinese-fonts;
+      text-fill: @simplified-chinese-color-debug;
+    }
   }
 
   [feature = 'leisure_sauna'][zoom >= 17],
@@ -1737,6 +1761,10 @@
     text-face-name: @standard-font;
     text-halo-radius: @standard-halo-radius;
     text-halo-fill: @standard-halo-fill;
+    [cjk = 'sc'] {
+      text-face-name: @simplified-chinese-fonts;
+      text-fill: @simplified-chinese-color-debug;
+    }
   }
 
   [feature = 'amenity_car_rental'][zoom >= 17],
@@ -1757,6 +1785,10 @@
     text-face-name: @standard-font;
     text-halo-radius: @standard-halo-radius;
     text-halo-fill: @standard-halo-fill;
+    [cjk = 'sc'] {
+      text-face-name: @simplified-chinese-fonts;
+      text-fill: @simplified-chinese-color-debug;
+    }
   }
 
   [feature = 'amenity_courthouse'][zoom >= 17],
@@ -1780,6 +1812,10 @@
     text-face-name: @standard-font;
     text-halo-radius: @standard-halo-radius;
     text-halo-fill: @standard-halo-fill;
+    [cjk = 'sc'] {
+      text-face-name: @simplified-chinese-fonts;
+      text-fill: @simplified-chinese-color-debug;
+    }
   }
 
   [feature = 'amenity_vehicle_inspection'][zoom >= 17],
@@ -1808,6 +1844,10 @@
     text-face-name: @standard-font;
     text-halo-radius: @standard-halo-radius;
     text-halo-fill: @standard-halo-fill;
+    [cjk = 'sc'] {
+      text-face-name: @simplified-chinese-fonts;
+      text-fill: @simplified-chinese-color-debug;
+    }
   }
 
   [feature = 'amenity_bbq'][zoom >= 17],
@@ -1827,6 +1867,10 @@
     text-face-name: @standard-font;
     text-halo-radius: @standard-halo-radius;
     text-halo-fill: @standard-halo-fill;
+    [cjk = 'sc'] {
+      text-face-name: @simplified-chinese-fonts;
+      text-fill: @simplified-chinese-color-debug;
+    }
     [int_access = 'restricted'] {
       text-opacity: @private-opacity;
       text-halo-radius: 0;
@@ -1844,6 +1888,10 @@
     text-face-name: @standard-font;
     text-halo-radius: @standard-halo-radius;
     text-halo-fill: @standard-halo-fill;
+    [cjk = 'sc'] {
+      text-face-name: @simplified-chinese-fonts;
+      text-fill: @simplified-chinese-color-debug;
+    }
   }
 
   [feature = 'amenity_marketplace'][zoom >= 16][way_pixels > 3000],
@@ -1857,6 +1905,10 @@
     text-face-name: @standard-font;
     text-halo-radius: @standard-halo-radius;
     text-halo-fill: rgba(255, 255, 255, 0.6);
+    [cjk = 'sc'] {
+      text-face-name: @simplified-chinese-fonts;
+      text-fill: @simplified-chinese-color-debug;
+    }
   }
 
   [feature = 'natural_peak'][zoom >= 13],
@@ -1876,6 +1928,10 @@
     text-face-name: @standard-font;
     text-halo-radius: @standard-halo-radius;
     text-halo-fill: @standard-halo-fill;
+    [cjk = 'sc'] {
+      text-face-name: @simplified-chinese-fonts;
+      text-fill: @simplified-chinese-color-debug;
+    }
   }
 
   [feature = 'natural_cape'][zoom >= 14] {
@@ -1887,6 +1943,10 @@
     text-face-name: @standard-font;
     text-halo-radius: @standard-halo-radius;
     text-halo-fill: @standard-halo-fill;
+    [cjk = 'sc'] {
+      text-face-name: @simplified-chinese-fonts;
+      text-fill: @simplified-chinese-color-debug;
+    }
   }
 
   [feature = 'tourism_information'][information != 'board'][zoom >= 19],
@@ -1901,6 +1961,10 @@
     text-halo-radius: @standard-halo-radius;
     text-halo-fill: @standard-halo-fill;
     text-dy: 11;
+    [cjk = 'sc'] {
+      text-face-name: @simplified-chinese-fonts;
+      text-fill: @simplified-chinese-color-debug;
+    }
   }
 
   [feature = 'waterway_waterfall'] {
@@ -1917,6 +1981,10 @@
       text-face-name: @standard-font;
       text-halo-radius: @standard-halo-radius;
       text-halo-fill: @standard-halo-fill;
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-fonts;
+        text-fill: @simplified-chinese-color-debug;
+      }
     }
   }
 
@@ -1960,6 +2028,10 @@
     text-face-name: @standard-font;
     text-halo-radius: @standard-halo-radius;
     text-halo-fill: @standard-halo-fill;
+    [cjk = 'sc'] {
+      text-face-name: @simplified-chinese-fonts;
+      text-fill: @simplified-chinese-color-debug;
+    }
   }
 
   [feature = 'tourism_artwork'][zoom >= 17],
@@ -1985,6 +2057,10 @@
     text-face-name: @standard-font;
     text-halo-radius: @standard-halo-radius;
     text-halo-fill: @standard-halo-fill;
+    [cjk = 'sc'] {
+      text-face-name: @simplified-chinese-fonts;
+      text-fill: @simplified-chinese-color-debug;
+    }
   }
 
   [feature = 'military_bunker'][zoom >= 17] {
@@ -1997,6 +2073,10 @@
     text-face-name: @standard-font;
     text-halo-radius: @standard-halo-radius;
     text-halo-fill: @standard-halo-fill;
+    [cjk = 'sc'] {
+      text-face-name: @simplified-chinese-fonts;
+      text-fill: @simplified-chinese-color-debug;
+    }
   }
 
   [feature = 'leisure_miniature_golf'][zoom >= 17],
@@ -2010,6 +2090,10 @@
     text-halo-radius: @standard-halo-radius;
     text-halo-fill: @standard-halo-fill;
     text-dy: 13;
+    [cjk = 'sc'] {
+      text-face-name: @simplified-chinese-fonts;
+      text-fill: @simplified-chinese-color-debug;
+    }
   }
 
   [feature = 'leisure_water_park'],
@@ -2026,6 +2110,10 @@
       text-face-name: @standard-font;
       text-halo-radius: @standard-halo-radius;
       text-halo-fill: @standard-halo-fill;
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-fonts;
+        text-fill: @simplified-chinese-color-debug;
+      }
     }
   }
 
@@ -2050,6 +2138,10 @@
       text-face-name: @landcover-face-name;
       text-halo-radius: @standard-halo-radius;
       text-halo-fill: @standard-halo-fill;
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-oblique-fonts;
+        text-fill: @simplified-chinese-color-debug;
+      }
     }
   }
 
@@ -2070,6 +2162,10 @@
       text-halo-fill: @standard-halo-fill;
       [int_access = 'restricted'] {
         text-fill: darken(@park, 50%);
+      }
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-fonts;
+        text-fill: @simplified-chinese-color-debug;
       }
     }
   }
@@ -2115,6 +2211,9 @@
       [feature = 'boundary_protected_area'] {
         text-fill: @protected-area;
       }
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-oblique-fonts;
+      }
     }
   }
 
@@ -2139,6 +2238,10 @@
       text-face-name: @landcover-face-name;
       text-halo-radius: @standard-halo-radius;
       text-halo-fill: @standard-halo-fill;
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-oblique-fonts;
+        text-fill: @simplified-chinese-color-debug;
+      }
     }
   }
 
@@ -2163,6 +2266,10 @@
       text-face-name: @landcover-face-name;
       text-halo-radius: @standard-halo-radius;
       text-halo-fill: @standard-halo-fill;
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-oblique-fonts;
+        text-fill: @simplified-chinese-color-debug;
+      }
     }
   }
 
@@ -2309,6 +2416,10 @@
       [feature = 'tourism_zoo'] {
         text-fill: @tourism;
         text-face-name: @bold-fonts; /*rendered bold to improve visibility since theme parks tend to have crowded backgrounds*/
+        [cjk = 'sc'] {
+          text-face-name: @simplified-chinese-bold-fonts;
+          text-fill: @simplified-chinese-color-debug;
+        }
       }
       [feature = 'amenity_kindergarten'],
       [feature = 'amenity_school'],
@@ -2354,7 +2465,7 @@
         text-fill: darken(@pitch, 40%);
       }
       [cjk = 'sc'] {
-        text-face-name: @simplified-chinese-fonts;
+        text-face-name: @simplified-chinese-oblique-fonts;
         text-fill: @simplified-chinese-color-debug;
       }
     }
@@ -2370,6 +2481,10 @@
     text-halo-radius: @standard-halo-radius;
     text-halo-fill: @standard-halo-fill;
     text-dy: 7;
+    [cjk = 'sc'] {
+      text-face-name: @simplified-chinese-fonts;
+      text-fill: @simplified-chinese-color-debug;
+    }
   }
 
   [feature = 'amenity_atm'][zoom >= 19],
@@ -2383,6 +2498,10 @@
     text-halo-radius: @standard-halo-radius;
     text-halo-fill: @standard-halo-fill;
     text-face-name: @standard-font;
+    [cjk = 'sc'] {
+      text-face-name: @simplified-chinese-fonts;
+      text-fill: @simplified-chinese-color-debug;
+    }
   }
 
   [feature = 'amenity_bureau_de_change'][zoom >= 17],
@@ -2397,6 +2516,10 @@
     text-halo-radius: @standard-halo-radius;
     text-halo-fill: @standard-halo-fill;
     text-face-name: @standard-font;
+    [cjk = 'sc'] {
+      text-face-name: @simplified-chinese-fonts;
+      text-fill: @simplified-chinese-color-debug;
+    }
   }
 
   [feature = 'tourism_alpine_hut'][zoom >= 14],
@@ -2439,6 +2562,10 @@
         text-halo-radius: 0;
       }
     }
+    [cjk = 'sc'] {
+      text-face-name: @simplified-chinese-fonts;
+      text-fill: @simplified-chinese-color-debug;
+    }
   }
 
   [feature = 'amenity_taxi'][zoom >= 17] {
@@ -2451,6 +2578,10 @@
     text-face-name: @standard-font;
     text-halo-radius: @standard-halo-radius;
     text-halo-fill: @standard-halo-fill;
+    [cjk = 'sc'] {
+      text-face-name: @simplified-chinese-fonts;
+      text-fill: @simplified-chinese-color-debug;
+    }
   }
 
   [feature = 'highway_bus_stop'],
@@ -2473,6 +2604,10 @@
       [int_access = 'restricted'] {
         text-opacity: @private-opacity;
         text-halo-radius: 0;
+      }
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-fonts;
+        text-fill: @simplified-chinese-color-debug;
       }
     }
   }
@@ -2498,6 +2633,10 @@
       text-face-name: @landcover-face-name;
       text-halo-radius: @standard-halo-radius;
       text-halo-fill: @standard-halo-fill;
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-oblique-fonts;
+        text-fill: @simplified-chinese-color-debug;
+      }
     }
   }
 
@@ -2514,6 +2653,10 @@
     [zoom >= 18] {
       text-dy: 10;
     }
+    [cjk = 'sc'] {
+      text-face-name: @simplified-chinese-fonts;
+      text-fill: @simplified-chinese-color-debug;
+    }
   }
 
   [feature = 'man_made_lighthouse'][zoom >= 15],
@@ -2527,6 +2670,10 @@
     text-face-name: @standard-font;
     text-halo-radius: @standard-halo-radius;
     text-halo-fill: @standard-halo-fill;
+    [cjk = 'sc'] {
+      text-face-name: @simplified-chinese-fonts;
+      text-fill: @simplified-chinese-color-debug;
+    }
   }
 
   [feature = 'amenity_recycling'][recycling_type = 'centre'][zoom >= 17],
@@ -2540,6 +2687,10 @@
     text-face-name: @standard-font;
     text-halo-radius: @standard-halo-radius;
     text-halo-fill: @standard-halo-fill;
+    [cjk = 'sc'] {
+      text-face-name: @simplified-chinese-fonts;
+      text-fill: @simplified-chinese-color-debug;
+    }
   }
 
   [feature = 'amenity_hospital'][zoom >= 16] {
@@ -2552,6 +2703,10 @@
     text-face-name: @standard-font;
     text-halo-radius: @standard-halo-radius;
     text-halo-fill: @standard-halo-fill;
+    [cjk = 'sc'] {
+      text-face-name: @simplified-chinese-fonts;
+      text-fill: @simplified-chinese-color-debug;
+    }
   }
 
 
@@ -2570,6 +2725,10 @@
       text-face-name: @standard-font;
       text-halo-radius: @standard-halo-radius;
       text-halo-fill: @standard-halo-fill;
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-fonts;
+        text-fill: @simplified-chinese-color-debug;
+      }
     }
   }
 
@@ -2585,6 +2744,10 @@
       text-halo-fill: @standard-halo-fill;
       text-dy: 8;
       text-fill: darken(@societal_amenities, 80%);
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-oblique-fonts;
+        text-fill: @simplified-chinese-color-debug;
+      }
     }
   }
 
@@ -2599,6 +2762,10 @@
       text-face-name: @standard-font;
       text-halo-radius: @standard-halo-radius;
       text-halo-fill: rgba(255, 255, 255, 0.6);
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-fonts;
+        text-fill: @simplified-chinese-color-debug;
+      }
     }
   }
 
@@ -2616,6 +2783,10 @@
       text-halo-fill: rgba(255, 255, 255, 0.6);
       [shop = 'massage'] {
         text-fill: @leisure-green;
+      }
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-fonts;
+        /* text-fill: @simplified-chinese-color-debug; */
       }
     }
   }
@@ -2668,6 +2839,11 @@
         text-face-name: @standard-font;
         text-halo-radius: @standard-halo-radius;
         text-halo-fill: rgba(255, 255, 255, 0.6);
+
+        [cjk = 'sc'] {
+          text-face-name: @simplified-chinese-fonts;
+          text-fill: @simplified-chinese-color-debug;
+        }
       }
     }
 
@@ -2682,6 +2858,11 @@
       text-face-name: @standard-font;
       text-halo-radius: @standard-halo-radius;
       text-halo-fill: rgba(255, 255, 255, 0.6);
+
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-fonts;
+        text-fill: @simplified-chinese-color-debug;
+      }
     }
   }
 
@@ -2697,6 +2878,10 @@
       text-face-name: @standard-font;
       text-halo-radius: @standard-halo-radius;
       text-halo-fill: rgba(255, 255, 255, 0.6);
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-fonts;
+        text-fill: @simplified-chinese-color-debug;
+      }
     }
   }
 
@@ -2712,6 +2897,10 @@
       text-face-name: @standard-font;
       text-halo-radius: @standard-halo-radius;
       text-halo-fill: rgba(255, 255, 255, 0.6);
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-fonts;
+        text-fill: @simplified-chinese-color-debug;
+      }
     }
   }
 
@@ -2724,6 +2913,10 @@
     text-face-name: @standard-font;
     text-halo-radius: @standard-halo-radius;
     text-halo-fill: @standard-halo-fill;
+    [cjk = 'sc'] {
+      text-face-name: @simplified-chinese-fonts;
+      text-fill: @simplified-chinese-color-debug;
+    }
   }
 
   [feature = 'power_plant'][is_building = 'no'][zoom >= 10],
@@ -2749,6 +2942,10 @@
       text-face-name: @landcover-face-name;
       text-halo-radius: @standard-halo-radius;
       text-halo-fill: @standard-halo-fill;
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-oblique-fonts;
+        text-fill: @simplified-chinese-color-debug;
+      }
     }
   }
 
@@ -2783,6 +2980,10 @@
       [feature = 'natural_sand'] {
         text-fill: darken(@sand, 50%);
       }
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-oblique-fonts;
+        text-fill: @simplified-chinese-color-debug;
+      }
     }
   }
 
@@ -2807,6 +3008,10 @@
       text-face-name: @landcover-face-name;
       text-halo-radius: @standard-halo-radius;
       text-halo-fill: @standard-halo-fill;
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-oblique-fonts;
+        text-fill: @simplified-chinese-color-debug;
+      }
     }
   }
 
@@ -2832,6 +3037,10 @@
       text-face-name: @landcover-face-name;
       text-halo-radius: @standard-halo-radius;
       text-halo-fill: @standard-halo-fill;
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-oblique-fonts;
+        text-fill: @simplified-chinese-color-debug;
+      }
     }
   }
 
@@ -2857,6 +3066,10 @@
       text-face-name: @landcover-face-name;
       text-halo-radius: @standard-halo-radius;
       text-halo-fill: @standard-halo-fill;
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-oblique-fonts;
+        text-fill: @simplified-chinese-color-debug;
+      }
     }
   }
 
@@ -2870,6 +3083,10 @@
     text-face-name: @standard-font;
     text-halo-radius: @standard-halo-radius;
     text-halo-fill: @standard-halo-fill;
+    [cjk = 'sc'] {
+      text-face-name: @simplified-chinese-fonts;
+      text-fill: @simplified-chinese-color-debug;
+    }
   }
 
   [feature = 'aeroway_aerodrome'][int_access = 'yes'][icao != null][iata != null][zoom >= 11][zoom < 17],
@@ -2888,7 +3105,7 @@
       text-halo-radius: @standard-halo-radius;
       text-halo-fill: @standard-halo-fill;
       [cjk = 'sc'] {
-        text-face-name: @simplified-chinese-fonts;
+        text-face-name: @simplified-chinese-oblique-fonts;
         text-fill: @simplified-chinese-color-debug;
       }
     }
@@ -2904,6 +3121,10 @@
     text-face-name: @oblique-fonts;
     text-halo-radius: @standard-halo-radius;
     text-halo-fill: @standard-halo-fill;
+    [cjk = 'sc'] {
+      text-face-name: @simplified-chinese-oblique-fonts;
+      text-fill: @simplified-chinese-color-debug;
+    }
   }
 
   [feature = 'amenity_hunting_stand'][zoom >= 17] {
@@ -2916,6 +3137,10 @@
     text-face-name: @standard-font;
     text-halo-radius: @standard-halo-radius;
     text-halo-fill: @standard-halo-fill;
+    [cjk = 'sc'] {
+      text-face-name: @simplified-chinese-fonts;
+      text-fill: @simplified-chinese-color-debug;
+    }
   }
 
   [feature = 'natural_tree'][zoom >= 17] {
@@ -2931,6 +3156,10 @@
     text-face-name: @standard-font;
     text-halo-radius: @standard-halo-radius;
     text-halo-fill: @standard-halo-fill;
+    [cjk = 'sc'] {
+      text-face-name: @simplified-chinese-fonts;
+      text-fill: @simplified-chinese-color-debug;
+    }
   }
 
   [feature = 'amenity_casino'][zoom >= 17] {
@@ -2943,6 +3172,10 @@
     text-face-name: @standard-font;
     text-halo-radius: @standard-halo-radius;
     text-halo-fill: @standard-halo-fill;
+    [cjk = 'sc'] {
+      text-face-name: @simplified-chinese-fonts;
+      text-fill: @simplified-chinese-color-debug;
+    }
   }
 
   [feature = 'tourism_attraction'][zoom >= 17][is_building = 'no'] {
@@ -2954,6 +3187,10 @@
     text-halo-radius: @standard-halo-radius;
     text-halo-fill: @standard-halo-fill;
     text-face-name: @standard-font;
+    [cjk = 'sc'] {
+      text-face-name: @simplified-chinese-fonts;
+      text-fill: @simplified-chinese-color-debug;
+    }
   }
 
   [feature = 'amenity_parking'],
@@ -2977,6 +3214,10 @@
       }
       [feature = 'amenity_bicycle_parking'],
       [feature = 'amenity_motorcycle_parking'] { text-dy: 12; }
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-fonts;
+        text-fill: @simplified-chinese-color-debug;
+      }
     }
   }
 
@@ -2990,6 +3231,10 @@
     text-face-name: @standard-font;
     text-halo-radius: @standard-halo-radius;
     text-halo-fill: @standard-halo-fill;
+    [cjk = 'sc'] {
+      text-face-name: @simplified-chinese-fonts;
+      text-fill: @simplified-chinese-color-debug;
+    }
   }
 }
 
@@ -3007,6 +3252,10 @@
     text-face-name: @standard-font;
     text-halo-radius: @standard-halo-radius;
     text-halo-fill: @standard-halo-fill;
+    [cjk = 'sc'] {
+      text-face-name: @simplified-chinese-fonts;
+      text-fill: @simplified-chinese-color-debug;
+    }
   }
 }
 
@@ -3069,6 +3318,10 @@
       text-vertical-alignment: middle;
       text-repeat-distance: @waterway-text-repeat-distance;
       text-dy: 8;
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-oblique-fonts;
+        text-fill: @simplified-chinese-color-debug;
+      }
     }
   }
 
@@ -3082,6 +3335,10 @@
     text-face-name: @standard-font;
     text-halo-radius: @standard-halo-radius;
     text-halo-fill: @standard-halo-fill;
+    [cjk = 'sc'] {
+      text-face-name: @simplified-chinese-fonts;
+      text-fill: @simplified-chinese-color-debug;
+    }
   }
 }
 

@@ -180,5 +180,8 @@ For a considerable number of labels this style will make no difference to the re
                 @book-fonts;
 @simplified-chinese-color-debug: "#f00";
 
+@simplified-chinese-oblique-fonts: "Noto Sans CJK SC Regular",
+                @oblique-fonts;
+
 @simplified-chinese-bold-fonts: "Noto Sans CJK SC Bold",
                 @bold-fonts;

@@ -178,6 +178,7 @@ Layer:
         (SELECT
             way,
             waterway,
+            cjk,
             CASE WHEN tags->'intermittent' IN ('yes')
               OR tags->'seasonal' IN ('yes', 'spring', 'summer', 'autumn', 'winter', 'wet_season', 'dry_season')
               THEN 'yes' ELSE 'no' END AS int_intermittent
@@ -197,6 +198,7 @@ Layer:
             way,
             waterway,
             name,
+            cjk,
             CASE WHEN tags->'intermittent' IN ('yes')
               OR tags->'seasonal' IN ('yes', 'spring', 'summer', 'autumn', 'winter', 'wet_season', 'dry_season')
               THEN 'yes' ELSE 'no' END AS int_intermittent,
@@ -222,6 +224,7 @@ Layer:
             "natural",
             waterway,
             landuse,
+            cjk,
             way_area/NULLIF(POW(!scale_denominator!*0.001*0.28,2),0) AS way_pixels,
             CASE WHEN tags->'intermittent' IN ('yes')
               OR tags->'seasonal' IN ('yes', 'spring', 'summer', 'autumn', 'winter', 'wet_season', 'dry_season')
@@ -998,6 +1001,7 @@ Layer:
         (SELECT
             way,
             waterway,
+            cjk,
             CASE WHEN tags->'intermittent' IN ('yes')
               OR tags->'seasonal' IN ('yes', 'spring', 'summer', 'autumn', 'winter', 'wet_season', 'dry_season')
               THEN 'yes' ELSE 'no' END AS int_intermittent,
@@ -2259,6 +2263,7 @@ Layer:
             waterway,
             lock,
             name,
+            cjk,
             "natural",
             tags->'lock_name' AS lock_name,
             CASE WHEN tags->'intermittent' IN ('yes')
@@ -2345,6 +2350,7 @@ Layer:
         (SELECT
             way,
             name,
+            cjk,
             COALESCE(
               'railway_' || CASE WHEN railway IN ('level_crossing', 'crossing') AND way_area IS NULL THEN railway END,
               'amenity_' || CASE WHEN amenity IN ('bench', 'waste_basket', 'waste_disposal') AND way_area IS NULL THEN amenity END,
@@ -2359,6 +2365,7 @@ Layer:
               (SELECT
                   ST_PointOnSurface(way) AS way,
                   name,
+                  cjk,
                   access,
                   amenity,
                   barrier,
@@ -2375,6 +2382,7 @@ Layer:
               SELECT
                   way,
                   name,
+                  cjk,
                   access,
                   amenity,
                   barrier,

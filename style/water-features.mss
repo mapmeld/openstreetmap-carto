@@ -128,6 +128,10 @@
       text-fill: #222;
       text-size: 10;
       text-face-name: @book-fonts;
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-fonts;
+        text-fill: @simplified-chinese-color-debug;
+      }
       #text-line {
         text-placement: line;
         text-dy: 8;
@@ -151,6 +155,10 @@
       text-fill: #222;
       text-size: 10;
       text-face-name: @book-fonts;
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-fonts;
+        text-fill: @simplified-chinese-color-debug;
+      }
       #text-line {
         text-placement: line;
         text-spacing: 400;

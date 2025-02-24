@@ -208,6 +208,10 @@
       text-size: 10;
       text-halo-radius: @standard-halo-radius;
       text-halo-fill: @standard-halo-fill;
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-oblique-fonts;
+        text-fill: @simplified-chinese-color-debug;
+      }
   }
 
   [lock != 'yes'][int_tunnel != 'yes'] {
@@ -222,6 +226,10 @@
       text-placement: line;
       text-repeat-distance: @waterway-text-repeat-distance;
       [zoom >= 14] { text-size: 12; }
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-oblique-fonts;
+        text-fill: @simplified-chinese-color-debug;
+      }
     }
 
     [waterway = 'canal'][zoom >= 13] {
@@ -233,6 +241,10 @@
       text-halo-fill: @standard-halo-fill;
       text-placement: line;
       text-repeat-distance: @waterway-text-repeat-distance;
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-oblique-fonts;
+        text-fill: @simplified-chinese-color-debug;
+      }
     }
 
     [waterway = 'stream'][zoom >= 15] {
@@ -247,6 +259,10 @@
       text-vertical-alignment: middle;
       text-dy: 8;
       text-repeat-distance: @waterway-text-repeat-distance;
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-oblique-fonts;
+        text-fill: @simplified-chinese-color-debug;
+      }
     }
 
     [waterway = 'drain'],
@@ -263,6 +279,10 @@
         text-vertical-alignment: middle;
         text-dy: 8;
         text-repeat-distance: @waterway-text-repeat-distance;
+        [cjk = 'sc'] {
+          text-face-name: @simplified-chinese-oblique-fonts;
+          text-fill: @simplified-chinese-color-debug;
+        }
       }
     }
   }
@@ -277,6 +297,10 @@
     text-max-char-angle-delta: 15;
     text-spacing: 400;
     text-placement: line;
+    [cjk = 'sc'] {
+      text-face-name: @simplified-chinese-oblique-fonts;
+      text-fill: @simplified-chinese-color-debug;
+    }
     [zoom >= 15] {
       text-size: 12;
     }
@@ -316,6 +340,10 @@
       text-halo-radius: @standard-halo-radius;
       text-halo-fill: @standard-halo-fill;
       text-placement: interior;
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-oblique-fonts;
+        text-fill: @simplified-chinese-color-debug;
+      }
     }
   }
 }
@@ -338,8 +366,8 @@
       text-line-spacing: -1.6; // -0.13 em
     }
     [cjk = 'sc'] {
-      text-face-name: @simplified-chinese-fonts;
-      text-fill: "#f00";
+      text-face-name: @simplified-chinese-oblique-fonts;
+      text-fill: @simplified-chinese-color-debug;
     }
   }
 }

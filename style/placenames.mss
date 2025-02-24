@@ -67,7 +67,7 @@
     text-halo-radius: @standard-halo-radius * 1.5;
     text-placement: interior;
     [cjk = 'sc'] {
-      text-face-name: @simplified-chinese-fonts;
+      text-face-name: @simplified-chinese-oblique-fonts;
       text-fill: @simplified-chinese-color-debug;
     }
     [zoom >= 7] {
@@ -474,9 +474,9 @@
       text-halo-fill: white;
       text-halo-radius: @standard-halo-radius * 1.5;
       [cjk = 'sc'] {
-          text-face-name: @simplified-chinese-fonts;
-          text-fill: @simplified-chinese-color-debug;
-        }
+        text-face-name: @simplified-chinese-fonts;
+        text-fill: @simplified-chinese-color-debug;
+      }
       [zoom >= 14] {
         text-size: 10;
         text-wrap-width: 55; // 5.0 em
@@ -490,6 +490,9 @@
         text-wrap-width: 45; // 4.5 em
         text-line-spacing: -0.8; // -0.08 em
         text-margin: 7.0; // 0.7 em
+        [cjk = 'sc'] {
+          text-fill: @simplified-chinese-color-debug;
+        }
       }
       [zoom >= 16] {
         text-size: 12;
@@ -498,6 +501,9 @@
         text-margin: 8.4; // 0.7 em
         text-fill: @placenames-light;
         text-halo-fill: white;
+        [cjk = 'sc'] {
+          text-fill: @simplified-chinese-color-debug;
+        }
       }
     }
   }
@@ -547,7 +553,7 @@
       text-placement-type: simple;
       text-placements: "S,SE,SW,E,NE,W,NW,N";
       [cjk = 'sc'] {
-          text-face-name: @simplified-chinese-fonts;
+          text-face-name: @simplified-chinese-oblique-fonts;
           text-fill: @simplified-chinese-color-debug;
         }
       [admin_level = '5'] {

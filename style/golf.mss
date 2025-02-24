@@ -42,6 +42,11 @@
     text-halo-fill: @standard-halo-fill;
     text-name: "[ref]";
 
+    [cjk = 'sc'] {
+      text-face-name: @simplified-chinese-fonts;
+      text-fill: @simplified-chinese-color-debug;
+    }
+
     [name != ''] { text-name: "[name]"; }
 
     [zoom >= 17] { text-size: 13; }
@@ -67,5 +72,10 @@
     text-horizontal-alignment: middle;
     text-dx: 1;
     text-dy: 6;
+
+    [cjk = 'sc'] {
+      text-face-name: @simplified-chinese-fonts;
+      text-fill: @simplified-chinese-color-debug;
+    }
   }
 }
