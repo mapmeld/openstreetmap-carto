@@ -15,6 +15,10 @@
       text-halo-radius: @standard-halo-radius * 1.5;
       text-halo-fill: @standard-halo-fill;
       text-wrap-width: 0;
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-fonts;
+        text-fill: @simplified-chinese-color-debug;
+      }
     }
   }
 
@@ -40,6 +44,10 @@
       text-halo-fill: @standard-halo-fill;
       text-wrap-width: 30; // 3 em
       text-line-spacing: -1.5; // -0.15 em
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-bold-fonts;
+        text-fill: @simplified-chinese-color-debug;
+      }
     }
     [zoom >= 15][station != 'subway'],
     [zoom >= 16] {
@@ -71,6 +79,10 @@
       text-halo-fill: @standard-halo-fill;
       text-wrap-width: @standard-wrap-width;
       text-line-spacing: @standard-line-spacing-size;
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-bold-fonts;
+        text-fill: @simplified-chinese-color-debug;
+      }
     }
   }
 
@@ -94,6 +106,10 @@
       text-halo-fill: @standard-halo-fill;
       text-wrap-width: @standard-wrap-width;
       text-line-spacing: @standard-line-spacing-size;
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-fonts;
+        text-fill: @simplified-chinese-color-debug;
+      }
     }
   }
 
@@ -117,6 +133,10 @@
       text-halo-fill: @standard-halo-fill;
       text-wrap-width: @standard-wrap-width;
       text-line-spacing: @standard-line-spacing-size;
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-fonts;
+        text-fill: @simplified-chinese-color-debug;
+      }
     }
   }
 }

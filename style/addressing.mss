@@ -72,5 +72,9 @@ no official postal addresses) */
     text-size: 11;
     text-wrap-width: 22; // 2.0 em
     text-line-spacing: -1.65; // -0.15 em
+    [cjk = 'sc'] {
+      text-face-name: @simplified-chinese-fonts;
+      text-fill: @simplified-chinese-color-debug;
+    }
   }
 }

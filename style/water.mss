@@ -337,5 +337,9 @@
       text-wrap-width: 37; // 3.1 em
       text-line-spacing: -1.6; // -0.13 em
     }
+    [cjk = 'sc'] {
+      text-face-name: @simplified-chinese-fonts;
+      text-fill: "#f00";
+    }
   }
 }

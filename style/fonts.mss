@@ -175,3 +175,10 @@ Italics are only available for the (Latin-Greek-Cyrillic) base font, not the oth
 For a considerable number of labels this style will make no difference to the regular style.
 */
 @oblique-fonts: "Noto Sans Italic", @book-fonts;
+
+@simplified-chinese-fonts: "Noto Sans CJK SC Regular",
+                @book-fonts;
+@simplified-chinese-color-debug: "#f00";
+
+@simplified-chinese-bold-fonts: "Noto Sans CJK SC Bold",
+                @bold-fonts;

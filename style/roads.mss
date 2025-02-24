@@ -3308,6 +3308,10 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
       text-wrap-character: ";";
       text-wrap-width: 2; // effectively break after every wrap character
       text-line-spacing: -1.5; // -0.15 em
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-fonts;
+        text-fill: @simplified-chinese-color-debug;
+      }
       [zoom >= 13] {
         ["name" != null]["ref" = null] {
           text-name: "[name]";
@@ -3335,6 +3339,10 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
       text-wrap-width: 30;  // 3.0 em
       text-line-spacing: -1.5; // -0.15 em
       text-min-distance: 2;
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-fonts;
+        text-fill: @simplified-chinese-color-debug;
+      }
       [zoom >= 17] {
         text-size: 11;
         text-line-spacing: -1.65; // -0.15 em
@@ -3361,6 +3369,10 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
       text-halo-fill: @standard-halo-fill;
       text-margin: 3; // 0.3 em
       text-wrap-width: 30;
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-fonts;
+        text-fill: @simplified-chinese-color-debug;
+      }
       [way_pixels > 250] {
         text-size: 11;
         text-margin: 3.3; // 0.3 em
@@ -3767,6 +3779,10 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
       text-halo-radius: @standard-halo-radius;
       text-halo-fill: @standard-halo-fill;
       text-repeat-distance: @minor-highway-text-repeat-distance;
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-fonts;
+        text-fill: @simplified-chinese-color-debug;
+      }
     }
   }
 }
@@ -3793,6 +3809,10 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
       text-halo-fill: @standard-halo-fill;
       text-spacing: 760;
       text-clip: false;
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-fonts;
+        text-fill: @simplified-chinese-color-debug;
+      }
     }
   }
 
@@ -3821,6 +3841,10 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
       text-spacing: 760;
       text-repeat-distance: @major-highway-text-repeat-distance;
       text-vertical-alignment: middle;
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-fonts;
+        text-fill: @simplified-chinese-color-debug;
+      }
     }
   }
 }
@@ -3846,6 +3870,10 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
         [highway = 'motorway'] { text-halo-fill: @motorway-fill; }
         [highway = 'trunk'] { text-halo-fill: @trunk-fill; }
         [highway = 'primary'] { text-halo-fill: @primary-fill; }
+      }
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-fonts;
+        text-fill: @simplified-chinese-color-debug;
       }
     }
     [zoom >= 14] {
@@ -3874,6 +3902,10 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
       text-halo-radius: @standard-halo-radius;
       text-halo-fill: @secondary-fill;
       text-repeat-distance: @major-highway-text-repeat-distance;
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-fonts;
+        text-fill: @simplified-chinese-color-debug;
+      }
     }
     [zoom >= 14] {
       text-size: 9;
@@ -3901,6 +3933,10 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
       text-halo-radius: @standard-halo-radius;
       text-halo-fill: @tertiary-fill;
       text-repeat-distance: @major-highway-text-repeat-distance;
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-fonts;
+        text-fill: @simplified-chinese-color-debug;
+      }
     }
     [zoom >= 17] {
       text-size: 11;
@@ -3920,6 +3956,10 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
     text-halo-fill: @standard-halo-fill;
     text-face-name: @book-fonts;
     text-repeat-distance: @major-highway-text-repeat-distance;
+    [cjk = 'sc'] {
+      text-face-name: @simplified-chinese-fonts;
+      text-fill: @simplified-chinese-color-debug;
+    }
 
     [zoom >= 17] {
       text-size: 11;
@@ -3948,6 +3988,10 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
       text-halo-fill: @residential-fill;
       text-face-name: @book-fonts;
       text-repeat-distance: @minor-highway-text-repeat-distance;
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-fonts;
+        text-fill: @simplified-chinese-color-debug;
+      }
       [highway = 'unclassified'] { text-repeat-distance: @major-highway-text-repeat-distance;}
     }
     [zoom >= 16] {
@@ -3979,6 +4023,10 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
       [highway = 'service'] { text-halo-fill: @service-fill; }
       text-face-name: @book-fonts;
       text-repeat-distance: @major-highway-text-repeat-distance;
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-fonts;
+        text-fill: @simplified-chinese-color-debug;
+      }
     }
     [zoom >= 17] {
       text-size: 11;
@@ -4004,6 +4052,10 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
       [highway = 'pedestrian'] { text-halo-fill: @pedestrian-fill; }
       text-face-name: @book-fonts;
       text-repeat-distance: @minor-highway-text-repeat-distance;
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-fonts;
+        text-fill: @simplified-chinese-color-debug;
+      }
     }
     [zoom >= 16] {
       text-size: 9;
@@ -4025,6 +4077,10 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
     text-face-name: @book-fonts;
     text-wrap-width: 30; // 2.7 em
     text-line-spacing: -1.7; // -0.15 em
+    [cjk = 'sc'] {
+      text-face-name: @simplified-chinese-fonts;
+      text-fill: @simplified-chinese-color-debug;
+    }
   }
 }
 
@@ -4044,6 +4100,10 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
       text-vertical-alignment: middle;
       text-dy: 5;
       text-repeat-distance: @major-highway-text-repeat-distance;
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-fonts;
+        text-fill: @simplified-chinese-color-debug;
+      }
     }
     [zoom >= 16] {
       text-size: 9;
@@ -4078,6 +4138,10 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
       text-vertical-alignment: middle;
       text-dy: 7;
       text-repeat-distance: @major-highway-text-repeat-distance;
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-fonts;
+        text-fill: @simplified-chinese-color-debug;
+      }
       [highway = 'steps'] { text-repeat-distance: @minor-highway-text-repeat-distance; }
     }
     [zoom >= 17] {
@@ -4176,6 +4240,10 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
         text-upright: right;
         text-vertical-alignment: middle;
         text-face-name: @book-fonts;
+        [cjk = 'sc'] {
+          text-face-name: @simplified-chinese-fonts;
+          text-fill: @simplified-chinese-color-debug;
+        }
         [oneway = '-1'] {
           text-upright: left;
           text-dy: -3;
@@ -4222,6 +4290,10 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
       text-halo-radius: @standard-halo-radius;
       text-halo-fill: @standard-halo-fill;
       text-repeat-distance: @railway-text-repeat-distance;
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-fonts;
+        text-fill: @simplified-chinese-color-debug;
+      }
     }
     [zoom >= 19] {
       text-size: 11;
@@ -4244,6 +4316,10 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
         text-halo-radius: @standard-halo-radius;
         text-halo-fill: @standard-halo-fill;
         text-repeat-distance: @railway-text-repeat-distance;
+        [cjk = 'sc'] {
+          text-face-name: @simplified-chinese-fonts;
+          text-fill: @simplified-chinese-color-debug;
+        }
       }
       [zoom >= 13] {
         text-dy: 6;
@@ -4273,6 +4349,10 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
         text-halo-radius: @standard-halo-radius;
         text-halo-fill: @standard-halo-fill;
         text-repeat-distance: @railway-text-repeat-distance;
+        [cjk = 'sc'] {
+          text-face-name: @simplified-chinese-fonts;
+          text-fill: @simplified-chinese-color-debug;
+        }
       }
       [zoom >= 17] {
         text-spacing: 600;
@@ -4305,6 +4385,10 @@ tertiary is rendered from z10 and is not included in osm_planet_roads. */
       text-halo-radius: @standard-halo-radius;
       text-halo-fill: @standard-halo-fill;
       text-repeat-distance: @railway-text-repeat-distance;
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-fonts;
+        text-fill: @simplified-chinese-color-debug;
+      }
     }
     [zoom >= 19] {
       text-size: 11;

@@ -470,12 +470,21 @@ Then all three layers are added to the rendering with comp-op: darken, so that t
     text-clip: true;
     text-vertical-alignment: middle;
     text-dy: -10;
+
+    [cjk = 'sc'] {
+      text-face-name: @simplified-chinese-fonts;
+      text-fill: @simplified-chinese-color-debug;
+    }
   }
 }
 
 #protected-areas-text[zoom >= 13][way_pixels > 192000] {
   text-name: "[name]";
   text-face-name: @book-fonts;
+  [cjk = 'sc'] {
+    text-face-name: @simplified-chinese-fonts;
+    text-fill: @simplified-chinese-color-debug;
+  }
   text-fill: @protected-area;
   [boundary='aboriginal_lands'] {
     text-fill: @aboriginal;

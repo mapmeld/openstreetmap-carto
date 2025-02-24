@@ -154,6 +154,10 @@
       text-face-name: @book-fonts;
       text-halo-radius: @standard-halo-radius;
       text-halo-fill: @standard-halo-fill;
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-fonts;
+        text-fill: @simplified-chinese-color-debug;
+      }
       [zoom >= 19] {
         text-size: 11;
         text-dy: 5;

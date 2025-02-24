@@ -26,5 +26,9 @@
     text-spacing: 1000;
     text-size: 10;
     text-dy: -8;
+    [cjk = 'sc'] {
+      text-face-name: @simplified-chinese-fonts;
+      text-fill: @simplified-chinese-color-debug;
+    }
   }
 }

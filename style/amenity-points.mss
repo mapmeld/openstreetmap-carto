@@ -2353,6 +2353,10 @@
       [feature = 'leisure_pitch'] {
         text-fill: darken(@pitch, 40%);
       }
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-fonts;
+        text-fill: @simplified-chinese-color-debug;
+      }
     }
   }
 
@@ -2883,6 +2887,10 @@
       text-face-name: @oblique-fonts;
       text-halo-radius: @standard-halo-radius;
       text-halo-fill: @standard-halo-fill;
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-fonts;
+        text-fill: @simplified-chinese-color-debug;
+      }
     }
   }
 

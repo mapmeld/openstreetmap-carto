@@ -969,5 +969,9 @@
     text-dy: 8;
     text-vertical-alignment: middle;
     text-spacing: 400;
+    [cjk = 'sc'] {
+      text-face-name: @simplified-chinese-fonts;
+      text-fill: @simplified-chinese-color-debug;
+    }
   }
 }

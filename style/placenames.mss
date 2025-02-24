@@ -45,6 +45,11 @@
     text-halo-fill: @standard-halo-fill;
     text-halo-radius: @standard-halo-radius * 1.5;
     text-character-spacing: 0.5;
+
+    [cjk = 'sc'] {
+      text-face-name: @simplified-chinese-fonts;
+      text-fill: @simplified-chinese-color-debug;
+    }
   }
 }
 
@@ -61,6 +66,10 @@
     text-halo-fill: @standard-halo-fill;
     text-halo-radius: @standard-halo-radius * 1.5;
     text-placement: interior;
+    [cjk = 'sc'] {
+      text-face-name: @simplified-chinese-fonts;
+      text-fill: @simplified-chinese-color-debug;
+    }
     [zoom >= 7] {
       text-size: 11;
       text-wrap-width: 40; // 3.6 em
@@ -137,6 +146,11 @@
     text-halo-fill: @standard-halo-fill;
     text-halo-radius: @standard-halo-radius * 1.5;
 
+    [cjk = 'sc'] {
+      text-face-name: @simplified-chinese-fonts;
+      text-fill: @simplified-chinese-color-debug;
+    }
+
     [zoom >= 10] {
       text-size: 14;
       text-wrap-width: 70; // 5.0 em
@@ -204,6 +218,11 @@
       text-halo-fill: @standard-halo-fill;
       text-halo-radius: @standard-halo-radius * 1.5;
 
+      [cjk = 'sc'] {
+        text-face-name: @simplified-chinese-fonts;
+        text-fill: @simplified-chinese-color-debug;
+      }
+
       [zoom >= 10] {
         text-size: 14;
         text-wrap-width: 70; // 5.0 em
@@ -256,6 +275,10 @@
       text-wrap-width: 40; // 4.0 em
       text-line-spacing: -1.0; // -0.10 em
       text-margin: 7.0; // 0.7 em
+      [cjk = 'sc'] {
+          text-face-name: @simplified-chinese-fonts;
+          text-fill: @simplified-chinese-color-debug;
+        }
       [zoom >= 9] {
         text-size: 12;
         text-wrap-width: 60; // 5.0 em
@@ -296,6 +319,10 @@
       text-wrap-width: 45; // 4.5 em
       text-line-spacing: -0.8; // -0.08 em
       text-margin: 7; // 0.7 em
+      [cjk = 'sc'] {
+          text-face-name: @simplified-chinese-fonts;
+          text-fill: @simplified-chinese-color-debug;
+        }
       [zoom >= 11] {
         text-size: 11;
         text-wrap-width: 55; // 5.0 em
@@ -329,6 +356,10 @@
     text-wrap-width: 55; // 5.0 em
     text-line-spacing: -0.55; // -0.05 em
     text-margin: 7.7; // 0.7 em
+    [cjk = 'sc'] {
+      text-face-name: @simplified-chinese-fonts;
+      text-fill: @simplified-chinese-color-debug;
+    }
     [zoom >= 13] {
       text-size: 12;
       text-wrap-width: 60; // 5.0 em
@@ -342,6 +373,9 @@
       text-margin: 9.8; // 0.7 em
       text-fill: @placenames-light;
       text-halo-fill: white;
+      [cjk = 'sc'] {
+        text-fill: @simplified-chinese-color-debug;
+      }
     }
     [zoom >= 16] {
       text-size: 15;
@@ -364,6 +398,10 @@
       text-wrap-width: 50; // 5.0 em
       text-line-spacing: -0.50; // -0.05 em
       text-margin: 7.0; // 0.7 em
+      [cjk = 'sc'] {
+          text-face-name: @simplified-chinese-fonts;
+          text-fill: @simplified-chinese-color-debug;
+        }
       [zoom >= 13] {
         text-size: 11;
         text-wrap-width: 55; // 5.0 em
@@ -402,6 +440,10 @@
       text-face-name: @book-fonts;
       text-halo-fill: @standard-halo-fill;
       text-halo-radius: @standard-halo-radius * 1.5;
+      [cjk = 'sc'] {
+          text-face-name: @simplified-chinese-fonts;
+          text-fill: @simplified-chinese-color-debug;
+        }
       [zoom >= 14] {
         text-halo-fill: white;
         text-size: 11;
@@ -431,6 +473,10 @@
       text-face-name: @book-fonts;
       text-halo-fill: white;
       text-halo-radius: @standard-halo-radius * 1.5;
+      [cjk = 'sc'] {
+          text-face-name: @simplified-chinese-fonts;
+          text-fill: @simplified-chinese-color-debug;
+        }
       [zoom >= 14] {
         text-size: 10;
         text-wrap-width: 55; // 5.0 em
@@ -470,6 +516,10 @@
     text-wrap-width: 45; // 4.5 em
     text-line-spacing: -0.8; // -0.08 em
     text-margin: 7.0; // 0.7 em
+    [cjk = 'sc'] {
+          text-face-name: @simplified-chinese-fonts;
+          text-fill: @simplified-chinese-color-debug;
+        }
     [zoom >= 16] {
       text-size: 12;
       text-wrap-width: 60; // 5.0 em
@@ -496,8 +546,16 @@
       text-halo-radius: @standard-halo-radius * 1.5;
       text-placement-type: simple;
       text-placements: "S,SE,SW,E,NE,W,NW,N";
+      [cjk = 'sc'] {
+          text-face-name: @simplified-chinese-fonts;
+          text-fill: @simplified-chinese-color-debug;
+        }
       [admin_level = '5'] {
         text-face-name: @book-fonts;
+        [cjk = 'sc'] {
+          text-face-name: @simplified-chinese-fonts;
+          text-fill: @simplified-chinese-color-debug;
+        }
         [zoom >= 10] {
           text-size: 12;
           text-wrap-width: 45; // 3.7 em
