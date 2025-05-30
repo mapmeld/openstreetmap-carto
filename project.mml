@@ -178,6 +178,7 @@ Layer:
         (SELECT
             way,
             waterway,
+            default_language,
             CASE WHEN tags->'intermittent' IN ('yes')
               OR tags->'seasonal' IN ('yes', 'spring', 'summer', 'autumn', 'winter', 'wet_season', 'dry_season')
               THEN 'yes' ELSE 'no' END AS int_intermittent
@@ -197,6 +198,7 @@ Layer:
             way,
             waterway,
             name,
+            default_language,
             CASE WHEN tags->'intermittent' IN ('yes')
               OR tags->'seasonal' IN ('yes', 'spring', 'summer', 'autumn', 'winter', 'wet_season', 'dry_season')
               THEN 'yes' ELSE 'no' END AS int_intermittent,
@@ -222,6 +224,7 @@ Layer:
             "natural",
             waterway,
             landuse,
+            default_language,
             way_area/NULLIF(POW(!scale_denominator!*0.001*0.28,2),0) AS way_pixels,
             CASE WHEN tags->'intermittent' IN ('yes')
               OR tags->'seasonal' IN ('yes', 'spring', 'summer', 'autumn', 'winter', 'wet_season', 'dry_season')
@@ -424,6 +427,7 @@ Layer:
             amenity,
             aeroway,
             aerialway,
+            default_language,
             tags->'public_transport' as public_transport
           FROM planet_osm_polygon
           WHERE building IS NOT NULL
@@ -666,6 +670,7 @@ Layer:
       table: |-
         (SELECT
             way,
+            default_language,
             COALESCE((
               'highway_' || (CASE WHEN highway IN ('pedestrian', 'footway', 'service', 'platform') THEN highway END)),
               ('railway_' || (CASE WHEN (railway IN ('platform')
@@ -783,6 +788,7 @@ Layer:
       table: |-
         (SELECT
             way,
+            default_language,
             COALESCE(
               ('highway_' || (CASE WHEN highway IN ('pedestrian', 'footway', 'service', 'living_street',
                                                     'platform', 'services') THEN highway END)),
@@ -982,6 +988,7 @@ Layer:
         (SELECT
             way,
             waterway,
+            default_language,
             CASE WHEN tags->'intermittent' IN ('yes')
               OR tags->'seasonal' IN ('yes', 'spring', 'summer', 'autumn', 'winter', 'wet_season', 'dry_season')
               THEN 'yes' ELSE 'no' END AS int_intermittent,
@@ -1220,6 +1227,7 @@ Layer:
         (SELECT
             way,
             boundary,
+            default_language,
             tags->'protect_class' AS protect_class,
             way_area/NULLIF(POW(!scale_denominator!*0.001*0.28,2),0) AS way_pixels
           FROM planet_osm_polygon
@@ -1267,7 +1275,8 @@ Layer:
               ORDER BY ST_Area(geom::geography) DESC
               LIMIT 1) AS way,
             way_area/NULLIF(POW(!scale_denominator!*0.001*0.28,2),0) AS way_pixels,
-            name
+            name,
+            default_language
           FROM planet_osm_polygon
           WHERE way && !bbox!
             AND name IS NOT NULL
@@ -1289,6 +1298,7 @@ Layer:
         (SELECT
             way,
             name,
+            default_language,
             CASE
               WHEN (tags->'population' ~ '^[0-9]{1,8}$') THEN (tags->'population')::INTEGER ELSE 0
             END as population,
@@ -1312,6 +1322,7 @@ Layer:
             ST_PointOnSurface(way) AS way,
             way_area/NULLIF(POW(!scale_denominator!*0.001*0.28,2),0) AS way_pixels,
             name,
+            default_language,
             admin_level,
             ref
           FROM planet_osm_polygon
@@ -1335,6 +1346,7 @@ Layer:
         (SELECT
             way,
             name,
+            default_language,
             score,
             CASE
               WHEN (place = 'city') THEN 1
@@ -1347,6 +1359,7 @@ Layer:
                 way,
                 place,
                 name,
+                default_language,
                 (
                   (CASE
                     WHEN (tags->'population' ~ '^[0-9]{1,8}$') THEN (tags->'population')::INTEGER
@@ -1380,7 +1393,8 @@ Layer:
         (SELECT
             way,
             place,
-            name
+            name,
+            default_language
           FROM planet_osm_point
           WHERE place IN ('village', 'hamlet')
              AND name IS NOT NULL
@@ -1414,7 +1428,8 @@ Layer:
             ref,
             railway,
             aerialway,
-            station
+            station,
+            default_language
           FROM
           (SELECT
               ST_PointOnSurface(way) AS way,
@@ -1423,6 +1438,7 @@ Layer:
               railway,
               aerialway,
               tags->'station' AS station,
+              default_language,
               way_area
             FROM planet_osm_polygon
             WHERE way && !bbox! -- Not ST_PointOnSurface(way) because name might be NULL
@@ -1435,6 +1451,7 @@ Layer:
               railway,
               aerialway,
               tags->'station' AS station,
+              default_language,
               NULL as way_area
             FROM planet_osm_point
             WHERE way && !bbox!
@@ -1465,6 +1482,7 @@ Layer:
             junction,
             ref,
             name,
+            default_language,
             NULL AS way_pixels
           FROM planet_osm_point
           WHERE way && !bbox!
@@ -1476,6 +1494,7 @@ Layer:
             junction,
             ref,
             name,
+            default_language,
             way_area/NULLIF(POW(!scale_denominator!*0.001*0.28,2),0) AS way_pixels
           FROM planet_osm_polygon
           WHERE way && !bbox! -- Not ST_PointOnSurface(way) because name might be NULL
@@ -1495,7 +1514,8 @@ Layer:
             ST_PointOnSurface(way) AS way,
             way_area/NULLIF(POW(!scale_denominator!*0.001*0.28,2),0) AS way_pixels,
             man_made,
-            name
+            name,
+            default_language
           FROM planet_osm_polygon
           WHERE ST_PointOnSurface(way) && !bbox!
             AND name IS NOT NULL
@@ -1516,7 +1536,8 @@ Layer:
             ST_PointOnSurface(way) AS way,
             way_area/NULLIF(POW(!scale_denominator!*0.001*0.28,2),0) AS way_pixels,
             name,
-            admin_level
+            admin_level,
+            default_language
           FROM planet_osm_polygon
           WHERE ST_PointOnSurface(way) && !bbox!
             AND name IS NOT NULL
@@ -1542,6 +1563,7 @@ Layer:
           FROM
           (SELECT -- This subselect allows filtering on the feature column
               way,
+              default_language,
               CASE
                 WHEN amenity = 'parcel_locker'
                 THEN CONCAT_WS(E'\n', COALESCE(tags->'brand', tags->'operator', name), ref)
@@ -1713,6 +1735,7 @@ Layer:
                   tourism,
                   waterway,
                   tags,
+                  default_language,
                   way_area
                 FROM planet_osm_polygon
                 WHERE way && !bbox! -- Not ST_PointOnSurface(way) because name might be NULL
@@ -1742,6 +1765,7 @@ Layer:
                   tourism,
                   waterway,
                   tags,
+                  default_language,
                   NULL AS way_area
                 FROM planet_osm_point
                 WHERE way && !bbox!
@@ -1804,12 +1828,14 @@ Layer:
             highway,
             height,
             width,
+            default_language,
             refs
           FROM (
             SELECT
                 way,
                 osm_id,
                 highway,
+                default_language,
                 array_length(refs,1) AS height,
                 (SELECT MAX(char_length(ref)) FROM unnest(refs) AS u(ref)) AS width,
                 array_to_string(refs, E'\n') AS refs
@@ -1818,6 +1844,7 @@ Layer:
                     way,
                     osm_id,
                     highway,
+                    default_language,
                     string_to_array(ref, ';') AS refs
                 FROM planet_osm_roads
                   WHERE highway IN ('motorway', 'trunk', 'primary', 'secondary')
@@ -1850,11 +1877,13 @@ Layer:
             highway,
             height,
             width,
+            default_language,
             refs
           FROM (
             SELECT
                 osm_id,
                 way,
+                default_language,
                 highway,
                 array_length(refs,1) AS height,
                 (SELECT MAX(char_length(ref)) FROM unnest(refs) AS u(ref)) AS width,
@@ -1863,6 +1892,7 @@ Layer:
                 SELECT
                     osm_id,
                     way,
+                    default_language,
                     COALESCE(
                       CASE WHEN highway IN ('motorway', 'trunk', 'primary', 'secondary', 'tertiary') THEN highway END,
                       CASE WHEN aeroway IN ('runway', 'taxiway') THEN aeroway END
@@ -1900,7 +1930,8 @@ Layer:
             ST_PointOnSurface(way) AS way,
             way_area/NULLIF(POW(!scale_denominator!*0.001*0.28,2),0) AS way_pixels,
             highway,
-            name
+            name,
+            default_language
           FROM planet_osm_polygon
           WHERE ST_PointOnSurface(way) && !bbox!
             AND name IS NOT NULL
@@ -1927,6 +1958,7 @@ Layer:
             CASE WHEN (tunnel = 'yes' OR tunnel = 'building_passage' OR covered = 'yes') THEN 'yes' ELSE 'no' END AS tunnel,
             construction,
             name,
+            default_language,
             CASE
               WHEN oneway IN ('yes', '-1') THEN oneway
               WHEN junction IN ('roundabout') AND (oneway IS NULL OR NOT oneway IN ('no', 'reversible')) THEN 'yes'
@@ -1958,6 +1990,7 @@ Layer:
             CASE WHEN highway = 'path' THEN carto_path_type(bicycle, horse) ELSE highway END AS highway,
             construction,
             name,
+            default_language,
             CASE
               WHEN oneway IN ('yes', '-1') THEN oneway
               WHEN junction IN ('roundabout') AND (oneway IS NULL OR NOT oneway IN ('no', 'reversible')) THEN 'yes'
@@ -1989,6 +2022,7 @@ Layer:
             tags->'usage' as usage,
             construction,
             name,
+            default_language,
             (CASE
               WHEN tags->'railway:preserved' = 'yes' THEN 'yes'
               ELSE 'no'
@@ -2018,12 +2052,14 @@ Layer:
             highway,
             height,
             width,
+            default_language,
             refs
           FROM (
             SELECT
                 osm_id,
                 way,
                 highway,
+                default_language,
                 array_length(refs,1) AS height,
                 (SELECT MAX(char_length(ref)) FROM unnest(refs) AS u(ref)) AS width,
                 array_to_string(refs, E'\n') AS refs
@@ -2031,6 +2067,7 @@ Layer:
                 SELECT
                     osm_id,
                     way,
+                    default_language,
                     CASE WHEN highway IN ('unclassified', 'residential', 'track') THEN highway END AS highway,
                     string_to_array(ref, ';') AS refs
                   FROM planet_osm_line
@@ -2059,6 +2096,7 @@ Layer:
       table: |-
         (SELECT
             ST_PointOnSurface(way) AS way,
+            default_language,
             way_area/NULLIF(POW(!scale_denominator!*0.001*0.28,2),0) AS way_pixels,
             COALESCE(
               'landuse_' || CASE WHEN landuse IN ('forest', 'military', 'farmland') THEN landuse END,
@@ -2102,6 +2140,7 @@ Layer:
             COALESCE('aerialway_' || aerialway, 'attraction_' || CASE WHEN tags @> 'attraction=>water_slide' THEN 'water_slide' END, 'leisure_' || leisure, 'man_made_' || man_made, 'waterway_' || waterway, 'natural_' || "natural", 'golf_' || (tags->'golf')) AS feature,
             access,
             name,
+            default_language,
             tags->'operator' as operator,
             ref,
             NULL AS way_area,
@@ -2140,6 +2179,7 @@ Layer:
         (SELECT
             name,
             ST_PointOnSurface(way) AS way,
+            default_language,
             way_area/NULLIF(POW(!scale_denominator!*0.001*0.28,2),0) AS way_pixels
           FROM planet_osm_polygon
           WHERE ST_PointOnSurface(way) && !bbox!
@@ -2176,6 +2216,7 @@ Layer:
             "addr:housename" AS addr_housename,
             tags->'addr:unit' AS addr_unit,
             tags->'addr:flats' AS addr_flats,
+            default_language,
             way_area/NULLIF(POW(!scale_denominator!*0.001*0.28,2),0) AS way_pixels
           FROM planet_osm_polygon
           WHERE way && !bbox! -- Not ST_PointOnSurface(way) because name might be NULL
@@ -2189,6 +2230,7 @@ Layer:
             "addr:housename" AS addr_housename,
             tags->'addr:unit' AS addr_unit,
             tags->'addr:flats' AS addr_flats,
+            default_language,
             NULL AS way_pixels
           FROM planet_osm_point
           WHERE way && !bbox!
@@ -2208,6 +2250,7 @@ Layer:
             waterway,
             lock,
             name,
+            default_language,
             "natural",
             tags->'lock_name' AS lock_name,
             CASE WHEN tags->'intermittent' IN ('yes')
@@ -2233,7 +2276,8 @@ Layer:
       table: |-
         (SELECT
             way,
-            name
+            name,
+            default_language
           FROM planet_osm_line
           WHERE route = 'ferry'
             AND osm_id > 0
@@ -2251,6 +2295,7 @@ Layer:
             way,
             name,
             admin_level,
+            default_language,
             way_area/NULLIF(POW(!scale_denominator!*0.001*0.28,2),0) AS way_pixels
           FROM planet_osm_polygon
           WHERE boundary = 'administrative'
@@ -2272,6 +2317,7 @@ Layer:
             way,
             name,
             boundary,
+            default_language,
             tags->'protect_class' AS protect_class,
             way_area/NULLIF(POW(!scale_denominator!*0.001*0.28,2),0) AS way_pixels
           FROM planet_osm_polygon
@@ -2291,6 +2337,7 @@ Layer:
         (SELECT
             way,
             name,
+            default_language,
             COALESCE(
               'railway_' || CASE WHEN railway IN ('level_crossing', 'crossing') AND way_area IS NULL THEN railway END,
               'amenity_' || CASE WHEN amenity IN ('bench', 'waste_basket', 'waste_disposal') AND way_area IS NULL THEN amenity END,
@@ -2305,6 +2352,7 @@ Layer:
               (SELECT
                   ST_PointOnSurface(way) AS way,
                   name,
+                  default_language,
                   access,
                   amenity,
                   barrier,
@@ -2321,6 +2369,7 @@ Layer:
               SELECT
                   way,
                   name,
+                  default_language,
                   access,
                   amenity,
                   barrier,
