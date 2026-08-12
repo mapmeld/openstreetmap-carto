@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # This script downloads several Noto fonts from https://github.com/notofonts/noto-fonts
 # That repo was archived in 2023 and is no longer updated.
-# Fonts in the NEWER_REPO list are downloaded from Noto's CDN or individual repos.
+# Fonts in the NEWER_REPO list are downloaded from Noto's GitHub Pages or CDN.
 
 import os
 import requests
@@ -19,15 +19,7 @@ except FileExistsError:
 
 # Fonts to source from CDN linked by https://notofonts.github.io
 # Includes updates after 2023.
-NEWER_NOTO_REPO = []
-
-# Special location of font after Noto stopped updating UI fonts
-REDIRECT_FONTS = {
-    "NotoSansArabic": {
-        "Regular": ["https://github.com/mapmeld/arabic/raw/refs/heads/main/fonts/NotoSansArabicUI/hinted/ttf/NotoSansArabicUI-Regular.ttf"],
-            "Bold": ["https://github.com/mapmeld/arabic/raw/refs/heads/main/fonts/NotoSansArabicUI/hinted/ttf/NotoSansArabicUI-Bold.ttf"]
-    }
-}
+NEWER_NOTO_REPO = ["NotoSansArabicUI"]
 
 # Fonts to download in regular, bold, and italic
 REGULAR_BOLD_ITALIC = ["NotoSans"]
@@ -35,7 +27,7 @@ REGULAR_BOLD_ITALIC = ["NotoSans"]
 # Fonts to download in regular and bold
 REGULAR_BOLD = [
     "NotoSansAdlamUnjoined",
-    "NotoSansArabic",
+    "NotoSansArabicUI",
     "NotoSansArmenian",
     "NotoSansBalinese",
     "NotoSansBamum",
@@ -102,16 +94,13 @@ REGULAR = [
     "NotoSansYi",
 ]
 
+
 # Attempt to download the font from repos in this order
 def findFontUrls(fontName, modifier):
-    if fontName in REDIRECT_FONTS:
-        return REDIRECT_FONTS[fontName][modifier] + [
-            f"https://github.com/notofonts/noto-fonts/raw/main/hinted/ttf/{fontName}/{fontName}-{modifier}.ttf",
-        ]
-    elif fontName in NEWER_NOTO_REPO:
+    if fontName in NEWER_NOTO_REPO:
         subDir = fontName.replace("NotoSans", "").replace("UI", "").lower()
         return [
-            f"https://cdn.jsdelivr.net/gh/notofonts/notofonts.github.io/fonts/{fontName}/hinted/ttf/{fontName}-{modifier}.ttf",
+            # f"https://cdn.jsdelivr.net/gh/notofonts/notofonts.github.io/fonts/{fontName}/hinted/ttf/{fontName}-{modifier}.ttf",
             f"https://notofonts.github.io/{subDir}/fonts/{fontName}/hinted/ttf/{fontName}-{modifier}.ttf",
         ]
     else:
