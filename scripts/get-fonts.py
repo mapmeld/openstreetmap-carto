@@ -100,8 +100,8 @@ def findFontUrls(fontName, modifier):
     if fontName in NEWER_NOTO_REPO:
         subDir = fontName.replace("NotoSans", "").replace("UI", "").lower()
         return [
-            # f"https://cdn.jsdelivr.net/gh/notofonts/notofonts.github.io/fonts/{fontName}/hinted/ttf/{fontName}-{modifier}.ttf",
             f"https://notofonts.github.io/{subDir}/fonts/{fontName}/hinted/ttf/{fontName}-{modifier}.ttf",
+            f"https://cdn.jsdelivr.net/gh/notofonts/notofonts.github.io/fonts/{fontName}/hinted/ttf/{fontName}-{modifier}.ttf",
         ]
     else:
         return [
